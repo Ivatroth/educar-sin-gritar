@@ -1,0 +1,588 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Educar sin gritar: La guía práctica</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'brand-green': '#D1FAE5', // Menta suave background
+                        'brand-teal': '#0F766E', // Texto fuerte y bordes
+                        'brand-accent': '#F43F5E', // Coral para botones/alertas
+                        'brand-yellow': '#FBBF24', // Amarillo cálido
+                        'brand-cream': '#FEF3C7', // Fondo alternativo
+                    },
+                    fontFamily: {
+                        sans: ['Open Sans', 'sans-serif'],
+                        heading: ['Montserrat', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Open Sans', sans-serif;
+        }
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Montserrat', sans-serif;
+        }
+        .shadow-book {
+            box-shadow: 10px 10px 20px rgba(0,0,0,0.25);
+            transform: rotate(-2deg);
+            transition: transform 0.3s ease;
+        }
+        .shadow-book:hover {
+            transform: rotate(0deg) scale(1.02);
+        }
+        .shadow-paper {
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+        }
+        .gradient-bg {
+            background: linear-gradient(135deg, #ecfdf5 0%, #ffffff 100%);
+        }
+        .cta-button {
+            transition: all 0.3s ease;
+            animation: pulsate 2s infinite ease-in-out; /* <--- LÍNEA NUEVA/MODIFICADA */
+        }
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 15px -3px rgba(244, 63, 94, 0.4);
+        }
+
+        /* Definición de la animación pulsate para todos los botones principales */
+        @keyframes pulsate {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.03); } /* Ligeramente más grande */
+            100% { transform: scale(1); }
+        }
+        /* Estilo crucial para asegurar que las imágenes de los bonos se alineen a la parte superior */
+        .align-top-cover {
+            object-position: top;
+        }
+        /* ESTILOS ESPECÍFICOS PARA LA SECCIÓN DE DOLOR CON IMAGEN DE FONDO */
+
+        .pain-section-bg {
+            background-image: url('https://res.cloudinary.com/db4cqwalt/image/upload/v1765394152/Educar%20sin%20grotal-%20Pagina%20de%20venta/seccion_dolor_e8hyr0.png'); /* Usando la imagen subida */
+            background-size: cover;
+            background-position: center;
+            position: relative;
+            z-index: 0;
+        }
+        .pain-section-bg::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            /* Overlay oscuro con 35% de opacidad para efecto marca de agua */
+            background-color: rgba(49, 48, 48, 0.712); 
+            z-index: 1;
+        }
+        .pain-content {
+            position: relative;
+            z-index: 2; /* Asegura que el contenido esté por encima del overlay */
+        } 
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800 antialiased">
+
+
+    <!-- Navbar Simple -->
+    <nav class="bg-gray-800 text-white shadow-sm py-4 sticky top-0 z-50">
+        <div class="container mx-auto px-4 text-center">
+            <span class="font-heading font-bold text-xl tracking-wider">CREANDO CONCIENCIA</span>
+        </div>
+    </nav>
+    <!-- Barra Superior de Urgencia (SIN PRECIO) -->
+    <div class="bg-brand-yellow text-gray-900 py-3 text-center text-sm font-semibold tracking-wide">
+        🚨 OFERTA LIMITADA: Consigue el EBOOK + 6 Bonos. ¡Acceso inmediato!
+    </div>
+    <!-- SECCIÓN 1: HERO -->
+    <header class="gradient-bg py-12 md:py-20 overflow-hidden">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row items-center justify-between gap-12">
+                <!-- Texto Hero -->
+                <div class="w-full md:w-1/2 text-center md:text-left z-10">
+                    <span class="inline-block bg-brand-yellow text-gray-900 font-bold px-3 py-1 rounded-full text-sm mb-4 animate-pulse">
+                        🔥 Oferta por tiempo limitado
+                    </span>
+                    <h1 class="text-4xl md:text-5xl lg:text-6xl font-heading font-extrabold text-gray-900 leading-tight mb-6">
+                        ¿Cansada de gritar y <span class="text-brand-accent">sentirte culpable</span> después?
+                    </h1>
+                    <p class="text-xl md:text-2xl text-gray-700 mb-2 font-semibold">
+                        Descubre cómo criar sin gritos (aunque hoy hayas perdido la paciencia).
+                    </p>
+                    <p class="text-lg text-gray-600 mb-8">
+                        La guía práctica con protocolo de emergencia, frases de reemplazo y plan de 30 días.
+                    </p>
+                    <a href="https://pay.hotmart.com/B103348072F" class="cta-button inline-block bg-brand-accent text-white font-bold text-xl px-8 py-4 rounded-full shadow-lg w-full md:w-auto text-center">
+                        Quiero dejar de gritar ahora &rarr;
+                    </a>
+                </div>
+                <!-- Imagen Hero -->
+                <div class="w-full md:w-1/2 flex justify-center relative">
+                    <div class="absolute bg-brand-green rounded-full w-72 h-72 md:w-96 md:h-96 -z-10 blur-3xl opacity-50 top-10"></div>
+                    <!-- IMAGEN 1: PORTADA -->
+                    <img src="https://res.cloudinary.com/db4cqwalt/image/upload/v1765394147/Educar%20sin%20grotal-%20Pagina%20de%20venta/Educar_sin_gritar_portada_uwrfy0.png" alt="Portada Ebook Educar Sin Gritar" class="w-3/4 md:w-2/3 shadow-book rounded-lg border-l-4 border-white mx-auto md:mx-0">
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- SECCIÓN 2: DOLOR (ACTUALIZADA CON IMAGEN DE FONDO) -->
+    <section class="py-16 pain-section-bg">
+        <div class="container mx-auto px-4 max-w-4xl pain-content">
+            <h2 class="text-3xl font-heading font-bold text-center text-white mb-12">
+                ¿Te ha pasado esto recientemente? 💔
+            </h2>
+            <div class="space-y-6">
+                <div class="flex items-start">
+                    <div class="flex-shrink-0 mt-1">
+                        <i class="fas fa-check-circle text-brand-accent text-2xl"></i>
+                    </div>
+                    <p class="ml-4 text-lg text-white">Prometes no volver a gritar... y al día siguiente vuelve a pasar.</p>
+                </div>
+                <div class="flex items-start">
+                    <div class="flex-shrink-0 mt-1">
+                        <i class="fas fa-check-circle text-brand-accent text-2xl"></i>
+                    </div>
+                    <p class="ml-4 text-lg text-white">Repites las cosas 10 veces y sientes que hablas a la pared.</p>
+                </div>
+                <div class="flex items-start">
+                    <div class="flex-shrink-0 mt-1">
+                        <i class="fas fa-check-circle text-brand-accent text-2xl"></i>
+                    </div>
+                    <p class="ml-4 text-lg text-white">Pierdes la paciencia por algo pequeño y te sientes horrible después.</p>
+                </div>
+                <div class="flex items-start">
+                    <div class="flex-shrink-0 mt-1">
+                        <i class="fas fa-check-circle text-brand-accent text-2xl"></i>
+                    </div>
+                    <p class="ml-4 text-lg text-white">Ves esa mirada de miedo o tristeza en los ojos de tu hijo y te rompe el corazón.</p>
+                </div>
+                <div class="flex items-start">
+                    <div class="flex-shrink-0 mt-1">
+                        <i class="fas fa-check-circle text-brand-accent text-2xl"></i>
+                    </div>
+                    <p class="ml-4 text-lg text-white font-bold">Te preguntas: "¿Qué clase de madre/padre soy?"</p>
+                </div>
+            </div>
+
+            <div class="mt-12 bg-black/30 p-8 rounded-xl border border-white/30 text-center backdrop-blur-sm">
+                <p class="text-xl font-semibold mb-4 text-white">Si respondiste "sí" a una o más, déjame decirte algo importante:</p>
+                <p class="text-2xl text-brand-green font-heading font-bold mb-4">No eres mala madre. No eres mal padre.</p>
+                <p class="text-white">Simplemente nadie te enseñó otra manera. Los gritos no funcionan a largo plazo. Tu hijo obedece por miedo, se desconecta de ti y tú te quedas con la culpa.</p>
+                <p class="mt-4 text-lg font-bold text-white">Pero hay una forma diferente. Y está en este libro.</p>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- SECCIÓN 3: TRANSFORMACIÓN -->
+    <section class="py-16 bg-brand-green">
+        <div class="container mx-auto px-4 text-center max-w-4xl">
+            <h2 class="text-3xl font-heading font-bold text-brand-teal mb-8">Imagina esto... ✨</h2>
+            <div class="grid md:grid-cols-2 gap-8 text-left">
+                <div class="bg-white p-6 rounded-lg shadow-paper">
+                    <i class="fas fa-star text-yellow-400 text-xl mb-3"></i>
+                    <p class="text-gray-700">Sientes que vas a explotar... pero <strong>haces una pausa de 10 segundos</strong> y recuperas el control.</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-paper">
+                    <i class="fas fa-star text-yellow-400 text-xl mb-3"></i>
+                    <p class="text-gray-700">Tu hijo te <strong>escucha a la primera</strong> sin necesidad de alzar la voz.</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-paper">
+                    <i class="fas fa-star text-yellow-400 text-xl mb-3"></i>
+                    <p class="text-gray-700">Pones límites firmes pero con <strong>voz calmada</strong> y segura.</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-paper">
+                    <i class="fas fa-star text-yellow-400 text-xl mb-3"></i>
+                    <p class="text-gray-700">Te acuestas cada noche sabiendo que hiciste <strong>lo mejor que pudiste</strong>.</p>
+                </div>
+            </div>
+            <p class="mt-10 text-xl text-brand-teal font-bold">Eso no es un sueño. Es lo que aprenderás en este ebook.</p>
+        </div>
+    </section>
+
+    <!-- SECCIÓN 4: CONTENIDO (ACORDEÓN) -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-4 max-w-4xl">
+            <h2 class="text-3xl font-heading font-bold text-center mb-12">📖 Lo que descubrirás dentro:</h2>
+            
+            <div class="space-y-4">
+                <!-- Capítulos -->
+                <div class="border rounded-lg overflow-hidden">
+                    <button class="w-full text-left px-6 py-4 bg-gray-50 hover:bg-gray-100 font-bold flex justify-between items-center focus:outline-none" onclick="toggleAccordion('cap1')">
+                        CAPÍTULO 1: Por qué gritamos (y qué pasa en tu cerebro)
+                        <i class="fas fa-chevron-down text-gray-400"></i>
+                    </button>
+                    <div id="cap1" class="hidden px-6 py-4 bg-white text-gray-600">
+                        <ul class="list-disc pl-5 space-y-2">
+                            <li>La verdad incómoda: gritar es automático (pero puede cambiarse)</li>
+                            <li>Los 5 disparadores más comunes que te hacen explotar</li>
+                            <li>Por qué los gritos NO funcionan (aunque parezca que sí)</li>
+                            <!--  -->
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="border rounded-lg overflow-hidden">
+                    <button class="w-full text-left px-6 py-4 bg-gray-50 hover:bg-gray-100 font-bold flex justify-between items-center focus:outline-none" onclick="toggleAccordion('cap2')">
+                        CAPÍTULO 2: El plan de emergencia
+                        <i class="fas fa-chevron-down text-gray-400"></i>
+                    </button>
+                    <div id="cap2" class="hidden px-6 py-4 bg-white text-gray-600">
+                        <ul class="list-disc pl-5 space-y-2">
+                            <li>Señales de que estás a punto de explotar</li>
+                            <li>Protocolo de 4 pasos para cuando sientes que vas a gritar</li>
+                            <li>Técnica de respiración 4-7-8</li>
+                            <li>Frases de emergencia que te salvan en el momento crítico</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="border rounded-lg overflow-hidden">
+                    <button class="w-full text-left px-6 py-4 bg-gray-50 hover:bg-gray-100 font-bold flex justify-between items-center focus:outline-none" onclick="toggleAccordion('cap3')">
+                        CAPÍTULO 3: Cómo lograr que te escuche SIN gritar
+                        <i class="fas fa-chevron-down text-gray-400"></i>
+                    </button>
+                    <div id="cap3" class="hidden px-6 py-4 bg-white text-gray-600">
+                        <ul class="list-disc pl-5 space-y-2">
+                            <li>Por qué no te escucha (y no es desobediencia)</li>
+                            <li>Fórmula de 5 pasos para que te escuche la primera vez</li>
+                            <li>Tabla de frases: "En lugar de gritar, digo..."</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="border rounded-lg overflow-hidden">
+                    <button class="w-full text-left px-6 py-4 bg-gray-50 hover:bg-gray-100 font-bold flex justify-between items-center focus:outline-none" onclick="toggleAccordion('cap4')">
+                        CAPÍTULO 4: Límites firmes con voz calmada
+                        <i class="fas fa-chevron-down text-gray-400"></i>
+                    </button>
+                    <div id="cap4" class="hidden px-6 py-4 bg-white text-gray-600">
+                        <ul class="list-disc pl-5 space-y-2">
+                            <li>La confusión más grande: límite firme ≠ voz fuerte</li>
+                            <li>Estructura mágica: Validación + Límite + Alternativa</li>
+                            <li>La técnica del "disco rayado"</li>
+                        </ul>
+                    </div>
+                </div>
+
+                 <div class="border rounded-lg overflow-hidden">
+                    <button class="w-full text-left px-6 py-4 bg-gray-50 hover:bg-gray-100 font-bold flex justify-between items-center focus:outline-none" onclick="toggleAccordion('cap8')">
+                        CAPÍTULO 8: Plan de 30 días sin gritos
+                        <i class="fas fa-chevron-down text-gray-400"></i>
+                    </button>
+                    <div id="cap8" class="hidden px-6 py-4 bg-white text-gray-600">
+                        <ul class="list-disc pl-5 space-y-2">
+                            <li>Semana 1: Autoobservación (sin juicio)</li>
+                            <li>Semana 2: Implementa la PAUSA</li>
+                            <li>Semana 3: Cambia 1 frase</li>
+                            <li>Semana 4: Repara y celebra</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECCIÓN 5: BONOS -->
+    <section class="py-16 bg-brand-cream border-t border-b border-yellow-200">
+        <div class="container mx-auto px-4 text-center">
+            <span class="bg-brand-accent text-white font-bold px-4 py-1 rounded-full text-sm mb-4 inline-block">🎁 REGALOS EXCLUSIVOS</span>
+            <h2 class="text-3xl md:text-4xl font-heading font-extrabold text-gray-900 mb-4">PERO ESO NO ES TODO...</h2>
+            <p class="text-xl text-gray-700 mb-12">Cuando compres hoy, recibirás este Kit de Herramientas Visuales (Valor $27) totalmente <strong class="text-brand-accent">GRATIS</strong>:</p>
+
+            <div class="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+                
+                <!-- Bono 1 -->
+                <div class="bg-white p-4 rounded-xl shadow-lg hover:scale-105 transition-transform duration-300">
+                    <div class="h-64 overflow-hidden rounded-lg mb-4 bg-gray-100 flex items-start justify-center">
+                        <!-- IMAGEN 2: PROTOCOLO -->
+                        <img src="https://res.cloudinary.com/db4cqwalt/image/upload/v1765394143/Educar%20sin%20grotal-%20Pagina%20de%20venta/Protocolo_Anti_Gritos_Creando_Conciencia_edv2fa.png" alt="Póster Protocolo" class="object-cover w-full h-full align-top-cover">
+                    </div>
+                    <h3 class="font-bold text-lg mb-2">Póster "Protocolo de Emergencia"</h3>
+                    <p class="text-sm text-gray-600">Para pegar en tu refrigerador y usarlo cuando sientas que vas a explotar.</p>
+                </div>
+
+                <!-- Bono 2 -->
+                <div class="bg-white p-4 rounded-xl shadow-lg hover:scale-105 transition-transform duration-300">
+                    <div class="h-64 overflow-hidden rounded-lg mb-4 bg-gray-100 flex items-start justify-center">
+                         <!-- IMAGEN 3: TARJETAS FRASES -->
+                        <img src="https://res.cloudinary.com/db4cqwalt/image/upload/v1765394147/Educar%20sin%20grotal-%20Pagina%20de%20venta/Tarjetas_Frases_Reemplazo_Consciente_ytmlqc.png" alt="Tarjetas Frases" class="object-cover w-full h-full align-top-cover">
+                    </div>
+                    <h3 class="font-bold text-lg mb-2">Tarjetas "En lugar de gritar..."</h3>
+                    <p class="text-sm text-gray-600">Frases de reemplazo rápido en formato bolsillo para tener las palabras exactas.</p>
+                </div>
+
+                <!-- Bono 3 -->
+                <div class="bg-white p-4 rounded-xl shadow-lg hover:scale-105 transition-transform duration-300">
+                    <div class="h-64 overflow-hidden rounded-lg mb-4 bg-gray-100 flex items-start justify-center">
+                         <!-- IMAGEN 4: CHECKLIST -->
+                        <img src="https://res.cloudinary.com/db4cqwalt/image/upload/v1765394146/Educar%20sin%20grotal-%20Pagina%20de%20venta/Checklist_30_Dias_Crianza_Consciente_c42r17.png" alt="Checklist 30 dias" class="object-cover w-full h-full align-top-cover">
+                    </div>
+                    <h3 class="font-bold text-lg mb-2">Checklist de 30 Días</h3>
+                    <p class="text-sm text-gray-600">Seguimiento visual de tu progreso día a día para mantener la motivación.</p>
+                </div>
+
+                <!-- Bono 4 -->
+                <div class="bg-white p-4 rounded-xl shadow-lg hover:scale-105 transition-transform duration-300">
+                    <div class="h-64 overflow-hidden rounded-lg mb-4 bg-gray-100 flex items-start justify-center">
+                         <!-- IMAGEN 5: REGISTRO -->
+                        <img src="https://res.cloudinary.com/db4cqwalt/image/upload/v1765394146/Educar%20sin%20grotal-%20Pagina%20de%20venta/Registro_Disparadores_qy7m18.png" alt="Registro Disparadores" class="object-cover w-full h-full align-top-cover">
+                    </div>
+                    <h3 class="font-bold text-lg mb-2">Registro de Disparadores</h3>
+                    <p class="text-sm text-gray-600">Identifica los patrones ocultos que te hacen perder la calma.</p>
+                </div>
+
+                <!-- Bono 5 -->
+                <div class="bg-white p-4 rounded-xl shadow-lg hover:scale-105 transition-transform duration-300">
+                    <div class="h-64 overflow-hidden rounded-lg mb-4 bg-gray-100 flex items-start justify-center">
+                         <!-- IMAGEN 6: GUIA RESPIRACION -->
+                        <img src="https://res.cloudinary.com/db4cqwalt/image/upload/v1765394146/Educar%20sin%20grotal-%20Pagina%20de%20venta/Guia_Respiracion_Ninos_fmiojj.png" alt="Guia Respiracion" class="object-cover w-full h-full align-top-cover">
+                    </div>
+                    <h3 class="font-bold text-lg mb-2">Guía Visual de Respiración</h3>
+                    <p class="text-sm text-gray-600">Ilustraciones simples (Globo, Flor, Tortuga) para practicar con tu hijo.</p>
+                </div>
+
+                 <!-- Bono 6 -->
+                 <div class="bg-white p-4 rounded-xl shadow-lg hover:scale-105 transition-transform duration-300">
+                    <div class="h-64 overflow-hidden rounded-lg mb-4 bg-gray-100 flex items-start justify-center">
+                         <!-- IMAGEN 7: TARJETAS REPARACION -->
+                        <img src="https://res.cloudinary.com/db4cqwalt/image/upload/v1765394144/Educar%20sin%20grotal-%20Pagina%20de%20venta/Tarjetas_Reparacion_Vinculo_az39b1.png" alt="Tarjetas Reparacion" class="object-cover w-full h-full align-top-cover">
+                    </div>
+                    <h3 class="font-bold text-lg mb-2">Tarjetas de Reparación</h3>
+                    <p class="text-sm text-gray-600">Frases exactas para pedir disculpas y reconectar genuinamente.</p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- SECCIÓN 6: PRECIO Y OFERTA -->
+    <section id="precio" class="py-20 bg-white">
+        <div class="container mx-auto px-4 max-w-3xl text-center">
+            <h2 class="text-3xl font-heading font-bold mb-6">¿Cuánto vale tu paz mental?</h2>
+            <p class="text-gray-600 mb-8">Una sola sesión con un psicólogo infantil cuesta entre $50 y $100 USD. <br>Este sistema completo es tuyo por una fracción de ese costo.</p>
+            
+            <div class="bg-white border-4 border-brand-yellow rounded-3xl p-8 shadow-2xl relative overflow-hidden">
+                <div class="absolute top-0 right-0 bg-brand-accent text-white font-bold px-4 py-2 rounded-bl-xl">
+                    -65% DCTO
+                </div>
+                
+                <div class="text-gray-400 text-xl line-through mb-2">Precio Regular: $29.99</div>
+                <div class="text-6xl font-extrabold text-brand-teal mb-4">$9.99 <span class="text-xl font-normal text-gray-600">USD</span></div>
+                
+                <ul class="text-left max-w-sm mx-auto space-y-3 mb-8 text-gray-700">
+                    <li><i class="fas fa-check text-green-500 mr-2"></i> Acceso inmediato al Ebook</li>
+                    <li><i class="fas fa-check text-green-500 mr-2"></i> Kit de 6 Imprimibles exclusivos</li>
+                    <li><i class="fas fa-check text-green-500 mr-2"></i> Plan de acción de 30 días</li>
+                    <li><i class="fas fa-check text-green-500 mr-2"></i> Actualizaciones de por vida</li>
+                </ul>
+
+                <a href="https://pay.hotmart.com/B103348072F" class="cta-button block w-full bg-brand-accent text-white font-bold text-2xl py-5 rounded-xl shadow-lg mb-4">
+                    SÍ, QUIERO CRIAR SIN GRITOS &rarr;
+                </a>
+                
+                <div class="flex justify-center items-center gap-2 text-sm text-gray-500">
+                    <i class="fas fa-lock"></i> Pago 100% Seguro vía Hotmart
+                </div>
+            </div>
+            
+            <!-- Garantía -->
+            <div class="mt-12 flex flex-col items-center">
+                <div class="w-20 h-20 bg-brand-green rounded-full flex items-center justify-center mb-4">
+                    <i class="fas fa-shield-alt text-4xl text-brand-teal"></i>
+                </div>
+                <h3 class="font-bold text-xl mb-2">Garantía de 7 Días - Riesgo CERO</h3>
+                <p class="text-gray-600 max-w-xl">Pruébalo durante 7 días. Si no ves resultados, si no te gusta, o si simplemente cambias de opinión, te devolvemos el 100% de tu dinero. Sin preguntas.</p>
+            </div>
+        </div>
+    </section>
+
+<!-- SECCIÓN 7: PREGUNTAS FRECUENTES (FAQ) -->
+    <section class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4 max-w-3xl">
+            <h2 class="text-3xl font-heading font-bold text-center mb-4">❓ REGUNTAS FRECUENTES (FAQ)</h2>
+            <p class="text-center text-lg text-gray-600 mb-10">¿Tengo dudas? Aquí las respuestas:</p>
+            <div class="space-y-4">
+                
+                <!-- Pregunta 1 -->
+                <details class="group bg-white p-4 rounded-lg cursor-pointer shadow-paper border border-gray-100" open>
+                    <summary class="font-bold flex justify-between items-center list-none text-brand-teal">
+                        ¿Este ebook realmente funciona?
+                        <span class="transition group-open:rotate-180"><i class="fas fa-chevron-down"></i></span>
+                    </summary>
+                    <p class="mt-4 text-gray-700">Este ebook está basado en neurociencia infantil, disciplina positiva y técnicas de autorregulación emocional probadas por miles de familias. No es magia, es práctica consciente. Si aplicas las herramientas, verás resultados.</p>
+                </details>
+
+                <!-- Pregunta 2 -->
+                <details class="group bg-white p-4 rounded-lg cursor-pointer shadow-paper border border-gray-100">
+                    <summary class="font-bold flex justify-between items-center list-none text-brand-teal">
+                        ¿Es solo teoría o tiene herramientas prácticas?
+                        <span class="transition group-open:rotate-180"><i class="fas fa-chevron-down"></i></span>
+                    </summary>
+                    <p class="mt-4 text-gray-700">Cada capítulo tiene ejemplos concretos, frases exactas que puedes usar, y un plan de acción de 30 días. Además, recibes 6 imprimibles listos para usar HOY.</p>
+                </details>
+
+                <!-- Pregunta 3 -->
+                <details class="group bg-white p-4 rounded-lg cursor-pointer shadow-paper border border-gray-100">
+                    <summary class="font-bold flex justify-between items-center list-none text-brand-teal">
+                        ¿Funciona con niños de todas las edades?
+                        <span class="transition group-open:rotate-180"><i class="fas fa-chevron-down"></i></span>
+                    </summary>
+                    <p class="mt-4 text-gray-700">Las técnicas funcionan desde los 2 hasta los 12 años. Obviamente ajustarás el lenguaje según la edad, pero los principios son los mismos.</p>
+                </details>
+                
+                <!-- Pregunta 4 -->
+                <details class="group bg-white p-4 rounded-lg cursor-pointer shadow-paper border border-gray-100">
+                    <summary class="font-bold flex justify-between items-center list-none text-brand-teal">
+                        ¿Y si no veo resultados?
+                        <span class="transition group-open:rotate-180"><i class="fas fa-chevron-down"></i></span>
+                    </summary>
+                    <p class="mt-4 text-gray-700">Tienes 7 días de garantía. Si no estás satisfecha, te devolvemos el 100% de tu dinero sin preguntas.</p>
+                </details>
+
+                <!-- Pregunta 5 -->
+                <details class="group bg-white p-4 rounded-lg cursor-pointer shadow-paper border border-gray-100">
+                    <summary class="font-bold flex justify-between items-center list-none text-brand-teal">
+                        ¿Cuándo recibo el ebook?
+                        <span class="transition group-open:rotate-180"><i class="fas fa-chevron-down"></i></span>
+                    </summary>
+                    <p class="mt-4 text-gray-700">INMEDIATAMENTE después del pago. Te llega un email con el enlace de descarga. Puedes empezar a leerlo en 2 minutos.</p>
+                </details>
+
+                <!-- Pregunta 6 -->
+                <details class="group bg-white p-4 rounded-lg cursor-pointer shadow-paper border border-gray-100">
+                    <summary class="font-bold flex justify-between items-center list-none text-brand-teal">
+                        ¿Puedo leerlo en mi celular/tablet?
+                        <span class="transition group-open:rotate-180"><i class="fas fa-chevron-down"></i></span>
+                    </summary>
+                    <p class="mt-4 text-gray-700">Sí, es un PDF optimizado para cualquier dispositivo: celular, tablet, computadora o Kindle.</p>
+                </details>
+
+                <!-- Pregunta 7 -->
+                <details class="group bg-white p-4 rounded-lg cursor-pointer shadow-paper border border-gray-100">
+                    <summary class="font-bold flex justify-between items-center list-none text-brand-teal">
+                        ¿Necesito experiencia previa?
+                        <span class="transition group-open:rotate-180"><i class="fas fa-chevron-down"></i></span>
+                    </summary>
+                    <p class="mt-4 text-gray-700">No. Está escrito para madres y padres reales, sin tecnicismos complicados. Si sabes leer, puedes aplicarlo.</p>
+                </details>
+
+                <!-- Pregunta 8 -->
+                <details class="group bg-white p-4 rounded-lg cursor-pointer shadow-paper border border-gray-100">
+                    <summary class="font-bold flex justify-between items-center list-none text-brand-teal">
+                        ¿Viene impreso o es digital?
+                        <span class="transition group-open:rotate-180"><i class="fas fa-chevron-down"></i></span>
+                    </summary>
+                    <p class="mt-4 text-gray-700">Es 100% digital. Lo descargas al instante y puedes imprimirlo si lo deseas.</p>
+                </details>
+
+            </div>
+        </div>
+    </section>
+
+ <!-- SECCIÓN 8: PARA QUIÉN ES -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-4 max-w-5xl">
+            <h2 class="text-3xl font-heading font-bold text-center mb-12">¿Es esto para ti?</h2>
+            <div class="grid md:grid-cols-2 gap-8">
+                <!-- SI -->
+                <div class="bg-gray-50 p-8 rounded-xl border-t-4 border-green-500 shadow-sm">
+                    <h3 class="text-xl font-bold text-green-700 mb-6 flex items-center">
+                        <i class="fas fa-check-circle mr-2"></i> ESTO ES PARA TI SI:
+                    </h3>
+                    <ul class="space-y-4">
+                        <li class="flex items-start"><i class="fas fa-check text-green-500 mt-1 mr-3"></i> <span>Gritas más de lo que quisieras y te sientes culpable.</span></li>
+                        <li class="flex items-start"><i class="fas fa-check text-green-500 mt-1 mr-3"></i> <span>Quieres poner límites sin perder la conexión con tu hijo.</span></li>
+                        <li class="flex items-start"><i class="fas fa-check text-green-500 mt-1 mr-3"></i> <span>Buscas herramientas prácticas, no teoría abstracta.</span></li>
+                        <li class="flex items-start"><i class="fas fa-check text-green-500 mt-1 mr-3"></i> <span>Estás dispuesta a intentar una forma diferente de criar.</span></li>
+                    </ul>
+                </div>
+                <!-- NO -->
+                <div class="bg-gray-50 p-8 rounded-xl border-t-4 border-red-400 shadow-sm">
+                    <h3 class="text-xl font-bold text-red-500 mb-6 flex items-center">
+                        <i class="fas fa-times-circle mr-2"></i> ESTO NO ES PARA TI SI:
+                    </h3>
+                    <ul class="space-y-4">
+                        <li class="flex items-start"><i class="fas fa-times text-red-400 mt-1 mr-3"></i> <span>Buscas una solución mágica instantánea sin esfuerzo.</span></li>
+                        <li class="flex items-start"><i class="fas fa-times text-red-400 mt-1 mr-3"></i> <span>No estás dispuesta a revisar tus propias reacciones.</span></li>
+                        <li class="flex items-start"><i class="fas fa-times text-red-400 mt-1 mr-3"></i> <span>Crees que "los niños de antes eran mejor educados a gritos".</span></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- SECCIÓN 9: CIERRE EMOCIONAL -->
+    <section class="py-20 bg-brand-green text-center">
+        <div class="container mx-auto px-4 max-w-3xl">
+            <div class="bg-white p-8 md:p-12 rounded-3xl shadow-xl">
+                <h2 class="text-2xl font-bold mb-6">Una última cosa antes de que decidas... ❤️</h2>
+                <div class="text-left space-y-4 text-gray-700 text-lg">
+                    <p>Sé que probablemente ya probaste mil cosas. Que leíste blogs, viste videos, pediste consejos. Y que nada parece funcionar cuando tu hijo te desafía o cuando simplemente estás agotada.</p>
+                    <p>Pero déjame decirte algo: <strong>El simple hecho de que estés aquí, leyendo esto, ya dice todo sobre el tipo de madre/padre que eres.</strong></p>
+                    <p>No eres perfecta. No eres perfecto. Pero te importa. Y eso es lo único que tu hijo realmente necesita.</p>
+                    <p>Este ebook no te convertirá en un padre perfecto. Pero sí te dará un plan claro para el próximo momento en que sientas que vas a gritar. Y eso, créeme, lo cambia todo.</p>
+                </div>
+                
+                <div class="mt-10">
+                    <h3 class="text-2xl font-heading font-extrabold text-brand-teal mb-4">¿Lista para el cambio?</h3>
+                    <a href="https://pay.hotmart.com/B103348072F" class="cta-button inline-block bg-brand-accent text-white font-bold text-xl px-10 py-5 rounded-full shadow-xl">
+                        DESCARGAR AHORA POR $9.99
+                    </a>
+                    <div class="mt-4 grid grid-cols-2 md:grid-cols-4 gap-2 text-sm text-gray-500 max-w-2xl mx-auto">
+                        <div><i class="fas fa-check text-green-500"></i> Acceso Inmediato</div>
+                        <div><i class="fas fa-check text-green-500"></i> 6 Imprimibles</div>
+                        <div><i class="fas fa-check text-green-500"></i> Plan 30 Días</div>
+                        <div><i class="fas fa-check text-green-500"></i> Garantía 7 Días</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-gray-800 text-white py-12">
+        <div class="container mx-auto px-4 text-center">
+            <h4 class="text-xl font-bold mb-4">Editorial Creando Conciencia</h4>
+            <p class="text-gray-400 mb-8">Promoviendo educación emocional, conciencia y bienestar familiar.</p>
+            <hr class="border-gray-700 mb-8 max-w-xs mx-auto">
+            <p class="text-sm text-gray-500">&copy; 2025 Editorial Creando Conciencia. Todos los derechos reservados.</p>
+            <div class="mt-4 text-xs text-gray-600 space-x-4">
+                <a href="#" class="hover:text-white">Términos y Condiciones</a>
+                <a href="#" class="hover:text-white">Política de Privacidad</a>
+                <a href="#" class="hover:text-white">Contacto</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function toggleAccordion(id) {
+            const element = document.getElementById(id);
+            const isHidden = element.classList.contains('hidden');
+            
+            // Cerrar todos primero (opcional, para efecto acordeón estricto)
+            // document.querySelectorAll('[id^="cap"]').forEach(el => el.classList.add('hidden'));
+
+            if (isHidden) {
+                element.classList.remove('hidden');
+            } else {
+                element.classList.add('hidden');
+            }
+        }
+    </script>
+
+</body>
+</html>
